@@ -12,7 +12,6 @@ body {
     padding: 1rem;
 }
 
-
 .fruit-container button {
     padding: 10px 15px;
     font-weight: bold;
@@ -28,7 +27,7 @@ body {
     cursor: pointer;
 }
 
-.reset-button {
+.submit-button {
     width: 100%;
     padding: 10px 15px;
     font-weight: bold;
@@ -36,9 +35,46 @@ body {
     background-color: #cecece;
     border-radius: .3rem;
     transition: all 0.2s ease-in-out;
+    margin: 1rem 0;
 }
 
-.reset-button:hover {
+.submit-button:hover {
     background-color: #FDDA92;
     cursor: pointer;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+select {
+    padding: .5rem;
+    outline: none;
+}
+
+.radio-element {
+    margin: .5rem 0;
+}
+
+input[type=radio] {
+    margin-right: .5rem
+}
+
+.textarea-element {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+
+.textarea-element > label {
+    flex-basis: 0;
+}
+
+textarea {
+    outline: none;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+}
+

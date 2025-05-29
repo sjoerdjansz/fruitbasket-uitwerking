@@ -9,7 +9,8 @@ export function FruitContainer({
     return (
         <div className="fruit-container">
             <div className="left-content">
-                <img className="fruit-icon" src={icon} alt={fruitTitle}/>
+                <img className={`fruit-icon ${count >= 1 ? "fruit-selected" : ""}`} src={icon}
+                     alt={fruitTitle}/>
                 <h2 className="fruit-title">{fruitTitle}</h2>
             </div>
             <div className="right-content">

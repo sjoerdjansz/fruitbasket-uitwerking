@@ -21,3 +21,7 @@
     object-fit: cover;
     border-radius: .3rem;
 }
+
+.fruit-selected {
+    border: 2px solid #fa6815;
+}

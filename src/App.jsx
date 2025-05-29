@@ -22,6 +22,41 @@ function App() {
         "apple": 0,
     });
 
+    const [formDetails, setFormDetails] = React.useState({
+        "firstname": "",
+        "lastname": "",
+        "age": 0,
+        "zipcode": "",
+        "delivery": "",
+        "time": "",
+        "comment": "",
+        "tos": false,
+    });
+
+    function handleChange(e) {
+        const formValue = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+        return setFormDetails({
+            ...formDetails,
+            [e.target.name]: formValue,
+        });
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(fruits);
+        console.log(formDetails);
+        setFormDetails({
+            "firstname": "",
+            "lastname": "",
+            "age": 0,
+            "zipcode": "",
+            "delivery": "",
+            "time": "",
+            "comment": "",
+            "tos": false,
+        });
+    }
+
     function handleClick(e) {
         const value = e.target.name.toLowerCase();
 
@@ -72,36 +107,53 @@ function App() {
                     onClick={() => resetFruitCount()}>Reset
             </button>
 
-            <form>
-                <FormElement type="text" name="firstname" label="Voornaam"/>
-                <FormElement type="text" name="achternaam" label="Achternaam"/>
-                <FormElement type="number" name="age" label="Leeftijd"/>
-                <FormElement type="text" name="zipcode" label="Postcode"/>
+            <form onSubmit={handleSubmit}>
+                <FormElement type="text" name="firstname" value={formDetails.firstname}
+                             label="Voornaam" handleChange={handleChange}/>
+                <FormElement type="text" name="lastname" value={formDetails.lastname}
+                             label="Achternaam" handleChange={handleChange}/>
+                <FormElement type="number" name="age" value={formDetails.age} label="Leeftijd"
+                             handleChange={handleChange}/>
+                <FormElement type="text" name="zipcode" value={formDetails.zipcode}
+                             label="Postcode" handleChange={handleChange}/>
                 <div className="form-element">
                     <label htmlFor="delivery">Bezorgfrequentie</label>
-                    <select name="delivery" id="delivery">
+                    <select name="delivery" id="delivery" value={formDetails.delivery}
+                            onChange={handleChange}>
                         <option value="weekly">Iedere week</option>
                         <option value="biweekly">Iedere twee weken</option>
                         <option value="monthly">Iedere maand</option>
                     </select>
                 </div>
                 <div className="radio-element">
-                    <input type="radio" name="time-of-delivery" id="daytime"/><label htmlFor="daytime">During
-                    the
-                    day</label>
+                    <input type="radio"
+                           name="time"
+                           id="day"
+                           value="day"
+                           checked={formDetails.time === "day"}
+                           onChange={handleChange}
+                    />
+                    <label htmlFor="day">During the day</label>
                 </div>
-                <div className="radio-element"><input type="radio" name="time-of-delivery"
-                                                      id="eveningtime"/><label
-                    htmlFor="eveningtime">During the
-                    evening</label>
+                <div className="radio-element">
+                    <input type="radio"
+                           name="time"
+                           id="evening"
+                           value="evening"
+                           checked={formDetails.time === "evening"}
+                           onChange={handleChange}/>
+                    <label
+                        htmlFor="evening">During the
+                        evening</label>
                 </div>
                 <div className="textarea-element">
                     <label htmlFor="comments">Opmerkingen</label>
-                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                    <textarea name="comment" id="comments" cols="30" rows="10"
+                              onChange={handleChange} value={formDetails.comment}></textarea>
                 </div>
-
                 <div className="tos-element">
-                    <input type="checkbox" name="tos" id="tos"/>
+                    <input type="checkbox" name="tos" id="tos" checked={formDetails.tos}
+                           onChange={handleChange}/>
                     <label htmlFor="tos">Ik ga akkoord met de voorwaarden en verkoop mijn ziel</label>
                 </div>
                 <button type="submit" className="submit-button">Verzend</button>

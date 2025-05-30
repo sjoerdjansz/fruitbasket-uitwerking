@@ -1,0 +1,7 @@
+.radio-element {
+    margin: .5rem 0;
+}
+
+input[type=radio] {
+    margin-right: .5rem
+}

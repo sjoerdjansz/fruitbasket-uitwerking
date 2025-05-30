@@ -1,0 +1,27 @@
+.fruit-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: .6rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.05) 0 1px 2px 0;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fruit-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.fruit-selected {
+    border: 2px solid #fa6815;
+}

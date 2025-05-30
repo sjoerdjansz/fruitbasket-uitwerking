@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    padding: 1rem;
+}
+
+.fruit-container button {
+    padding: 10px 15px;
+    font-weight: bold;
+    margin: .5rem;
+    border: none;
+    background-color: #cecece;
+    border-radius: .3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.fruit-container button:hover {
+    background-color: #FDDA92;
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    background-color: #cecece;
+    border-radius: .3rem;
+    transition: all 0.2s ease-in-out;
+    margin: 1rem 0;
+}
+
+.submit-button:hover {
+    background-color: #FDDA92;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+select {
+    padding: .5rem;
+    outline: none;
+}
+
+.textarea-element {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+
+.textarea-element > label {
+    flex-basis: 0;
+}
+
+textarea {
+    outline: none;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+}
+

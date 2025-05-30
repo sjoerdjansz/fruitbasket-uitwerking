@@ -1,0 +1,25 @@
+.form-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: .5rem 0;
+}
+
+label {
+    flex-grow: 0;
+    flex-basis: 120px;
+}
+
+input {
+    flex-basis: 160px;
+    flex-grow: 2;
+    flex-shrink: 1;
+    padding: .5rem 1rem;
+    outline: none;
+}
+
+h3 {
+    margin: .5rem 0;
+}

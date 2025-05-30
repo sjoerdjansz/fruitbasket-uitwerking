@@ -13,6 +13,7 @@ import {getFruit} from "./helpers/fruitString.js";
 //components
 import {FruitContainer} from "./components/fruitContainer.jsx";
 import {FormElement} from "./components/formElement.jsx";
+import {RadioElement} from "./components/radioElement.jsx";
 
 function App() {
     const [fruits, setFruits] = React.useState({
@@ -43,8 +44,9 @@ function App() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(fruits);
         console.log(formDetails);
+        console.log(fruits);
+
         setFormDetails({
             "firstname": "",
             "lastname": "",
@@ -125,32 +127,18 @@ function App() {
                         <option value="monthly">Iedere maand</option>
                     </select>
                 </div>
-                <div className="radio-element">
-                    <input type="radio"
-                           name="time"
-                           id="day"
-                           value="day"
-                           checked={formDetails.time === "day"}
-                           onChange={handleChange}
-                    />
-                    <label htmlFor="day">During the day</label>
-                </div>
-                <div className="radio-element">
-                    <input type="radio"
-                           name="time"
-                           id="evening"
-                           value="evening"
-                           checked={formDetails.time === "evening"}
-                           onChange={handleChange}/>
-                    <label
-                        htmlFor="evening">During the
-                        evening</label>
-                </div>
+                
+                <RadioElement name="time" value="day" handleChange={handleChange}
+                              checked={formDetails.time === "day"}/>
+                <RadioElement name="time" value="evening" handleChange={handleChange}
+                              checked={formDetails.time === "evening"}/>
+
                 <div className="textarea-element">
                     <label htmlFor="comments">Opmerkingen</label>
                     <textarea name="comment" id="comments" cols="30" rows="10"
                               onChange={handleChange} value={formDetails.comment}></textarea>
                 </div>
+
                 <div className="tos-element">
                     <input type="checkbox" name="tos" id="tos" checked={formDetails.tos}
                            onChange={handleChange}/>
